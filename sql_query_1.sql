@@ -92,8 +92,7 @@ extracting_difference_of_delivery_times AS (
         deliver_time - LAG(deliver_time) OVER (PARTITION BY agent_id, dispatch_date ORDER BY deliver_time, dispatch_date) AS difference_between_delivery_time
     FROM
         extracting_delivery_times_of_orders
-    WHERE
-        agent_name NOT IN ('Ahmed Mujtaba', 'Usama Mughal', 'Muhammad Zahid', 'Sadaat Shah', 'Faizan Soomro')
+   
 ),
 orders_with_delivery_times AS (
     SELECT
